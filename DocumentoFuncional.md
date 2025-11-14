@@ -40,9 +40,9 @@ Conversión: **1 BU = 15 DI**
 
 ### 2.3 Capacidad y Distribución
 
-- Si el **slot del cliente se llena**, se usa un **slot alternativo** marcado como “overflow”.
-- Si el **slot 13** (zona BU) se llena, se inicia una **segunda capa** con separador físico.
-- Si no hay stock suficiente, el pikeador **marca faltante** para resolución posterior.
+- ¿Que pasa si el **slot del cliente se llena** y todavia faltan prodcutos por pikear?
+- ¿Que pasa si el **slot 13** (zona BU) se llena?
+- ¿Si no hay stock suficiente de un articulo para cubrir el total que criterio se usara para repartir los productos existentes en los slots que corresponda?
 
 ---
 
@@ -64,16 +64,6 @@ Conversión: **1 BU = 15 DI**
   - Se embala lo del **slot del cliente**.
   - Se toman los **BU necesarios** desde la zona superior.
   - Se **etiquetan las cajas** y se envían a despacho.
-
-> **Regla:** En Isla se descuentan primero los **BU** del área superior y luego se completan los faltantes con DI/UN del slot del cliente.
-
----
-
-### 2.6 Despacho
-
-- Se consolidan las cajas por cliente/pedido.
-- Se liberan los BU y DI/UN utilizados.
-- Cualquier sobrante se etiqueta como **SOBRANTE** y se devuelve a stock.
 
 ---
 
@@ -99,32 +89,12 @@ Conversión: **1 BU = 15 DI**
 
 ---
 
-## 5. Excepciones y Manejo de Incidencias
-
-- **Faltantes o roturas:** se marcan como pendientes, los pedidos quedan incompletos hasta resolver.
-- **Sobrantes en isla:** se etiquetan y devuelven al stock.
-- **Conflictos de espacio:** se priorizan BU de clientes con salida inmediata.
-- **Desvío a control:** si pasa por control, solo se verifica el conteo global, no por cliente.
-
----
-
-## 6. Roles y Responsabilidades (RACI)
-
-| Rol | Responsabilidad | Tipo |
-|------|-----------------|------|
-| **Pikeador** | Ejecuta separación (slots + BU), rotula slots, reporta faltantes. | R |
-| **Líder de Picking** | Supervisa cumplimiento de reglas, gestiona overflow. | A |
-| **Operario de Isla** | Arma cajas, consume BU, etiqueta final. | R |
-| **Control / Calidad** | Audita conteos y coherencia visual. | C |
-| **Despacho** | Recibe cajas cerradas y planifica salida. | I |
-
----
-
-## 7. Puntos de Control
+## 5. Puntos de Control
 
 1. **Salida de picking:**  
-   - Verificar que cada slot tenga tarjeta Cliente+Pedido.  
-   - Confirmar que la zona BU esté rotulada.
+   - Verificar que cada slot tenga tarjeta Cliente+Pedido.
+   - ¿como se hara esto?
+   - ¿como sabra en picking isla que slot corresponde a cada pedido/cliente?
 
 2. **Recepción en isla:**  
    - Validar coincidencia entre listado y contenido de slots.
@@ -132,10 +102,6 @@ Conversión: **1 BU = 15 DI**
 3. **Cierre de pedido:**  
    - Confirmar conteo final de BU + DI/UN.  
    - Etiqueta de cierre aplicada.
-
-4. **Sobrantes:**  
-   - Todo sobrante se etiqueta y se devuelve a stock.
-
 ---
 
 ## 8. Glosario
