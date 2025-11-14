@@ -47,23 +47,8 @@ Conversión: **1 BU = 15 DI**
 → El sistema indica pikear 50 DI en el mobil.
 → El el carro muestra **3 BU arriba (slot 13)** y **5 DI** en el **slot del cliente X**.
 
-  
-    OPCION 2:
-- 
-#### Ejemplo 1
-Pedido del cliente X: 20 DI  
-Conversión: **1 BU = 15 DI**  
-→ El sistema indica pikear 20 DI en el mobil.
-→ El el carro muestra **1 BU arriba (slot 13)**
-**5 DI** en el **slot del cliente X**.
-#### Ejemplo 2
-Pedido del cliente X: 20 DI 
-Pedido del cliente Y: 30 DI
 
-Conversión: **1 BU = 15 DI**
-
-→ El sistema indica pikear 50 DI en el mobil.
-→ El el carro muestra **3 BU arriba (slot 13)** y **5 DI** en el **slot del cliente X**.
+  OPCION 2:
 
 
 ---
