@@ -26,15 +26,45 @@ El objetivo del nuevo flujo es que el **pikeador** realice la **separación de p
   - **Si la unidad pedida es DI o UN:**  
     El pikeador reparte las cantidades directamente en el **slot correspondiente al cliente**.
   - **Si algún cliente pide BU (bultos completos o equivalentes):**
+  
     OPCION 1:
+    - Todos los Bu que completen cada pedido se suman y se coloca ese numero en el display de arriba 
     - Los **BU** se colocan en la **parte superior del carro (slot 13)**, compartido.  
     - **Los sobrantes** (lo que no completa un BU) se colocan en el **slot del cliente**.
 
-#### Ejemplo
+#### Ejemplo 1
 Pedido del cliente X: 20 DI  
 Conversión: **1 BU = 15 DI**  
-→ El sistema indica pikear 20 DI.  
-→ Se coloca **1 BU arriba (slot 13)** y **5 DI** en el **slot del cliente X**.
+→ El sistema indica pikear 20 DI en el mobil.
+→ El el carro muestra **1 BU arriba (slot 13)**
+**5 DI** en el **slot del cliente X**.
+#### Ejemplo 2
+Pedido del cliente X: 20 DI 
+Pedido del cliente Y: 30 DI
+
+Conversión: **1 BU = 15 DI**
+
+→ El sistema indica pikear 50 DI en el mobil.
+→ El el carro muestra **3 BU arriba (slot 13)** y **5 DI** en el **slot del cliente X**.
+
+  
+    OPCION 2:
+- 
+#### Ejemplo 1
+Pedido del cliente X: 20 DI  
+Conversión: **1 BU = 15 DI**  
+→ El sistema indica pikear 20 DI en el mobil.
+→ El el carro muestra **1 BU arriba (slot 13)**
+**5 DI** en el **slot del cliente X**.
+#### Ejemplo 2
+Pedido del cliente X: 20 DI 
+Pedido del cliente Y: 30 DI
+
+Conversión: **1 BU = 15 DI**
+
+→ El sistema indica pikear 50 DI en el mobil.
+→ El el carro muestra **3 BU arriba (slot 13)** y **5 DI** en el **slot del cliente X**.
+
 
 ---
 
@@ -74,7 +104,7 @@ Conversión: **1 BU = 15 DI**
 | **BU (Bultos)** | Slot 13 (superior) | Compartido entre clientes |
 | **DI / UN** | Slot del cliente | Se separan por pedido |
 | **Sobrantes** | Slot del cliente | Si no completa un BU |
-| **Overflow** | Slot alternativo | Etiquetado por cliente |
+| **Overflow** | ??? | a definir |
 | **Sin stock** | N/A | Se marca como pendiente |
 
 ---
@@ -104,7 +134,7 @@ Conversión: **1 BU = 15 DI**
    - Etiqueta de cierre aplicada.
 ---
 
-## 8. Glosario
+## 6. Glosario
 
 | Término | Descripción |
 |----------|--------------|
