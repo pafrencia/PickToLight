@@ -56,6 +56,43 @@ Las pruebas se realizaron tanto en **entorno de desarrollo local** (con emulador
 
 ## ⚙️ 4. Funcionamiento del Servicio
 
+### 🔸 TABLA DE DATOS PARA LAS PRUEBAS
+   ```sql
+USE [OrderManager]
+GO
+
+/****** Object:  Table [dbo].[CarroDisplayQueue]    Script Date: 19/11/2025 12:38:43 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[CarroDisplayQueue](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[Carro] [int] NOT NULL,
+	[Display] [int] NOT NULL,
+	[EstadoLed] [int] NOT NULL,
+	[ColorLed] [int] NOT NULL,
+	[Valor] [int] NOT NULL,
+	[Procesado] [bit] NOT NULL,
+	[FechaCreado] [datetime] NOT NULL,
+	[FechaProcesado] [datetime] NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
+ALTER TABLE [dbo].[CarroDisplayQueue] ADD  DEFAULT ((0)) FOR [Procesado]
+GO
+
+ALTER TABLE [dbo].[CarroDisplayQueue] ADD  DEFAULT (getdate()) FOR [FechaCreado]
+GO
+ ```
+
+
 ### 🔸 4.1 Modo Normal (Producción)
 1. Leer registros de `CarroDisplayQueue` donde `Procesado = 0`.
 2. Enviar a Master:
