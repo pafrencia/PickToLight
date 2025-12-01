@@ -358,3 +358,5 @@ END;
 ```
 
 ---
+
+[mob_sp_save_picking.sql](https://github.com/user-attachments/files/23853810/mob_sp_save_picking.sql)
