@@ -359,4 +359,22 @@ END;
 
 ---
 
+## ARCHIVO StoreProcedure mob_sp_save_picking
+
+### contiene una modificacion del Sp agregandole el uso del SP de reset de carro, para que al pasar al siguiente producto el carro resetee todos los slots
+
 [mob_sp_save_picking.sql](https://github.com/user-attachments/files/23853810/mob_sp_save_picking.sql)
+
+## ARCHIVO StoreProcedure mob_sp_prod_picking
+
+### contiene una modificacion del Sp agregandole el uso del sp_EnqueuePickToLight_Producto_ByScanUM, para que al pasar al escanear un producto se agreguen a la tabla CarroDisplayQueue las filas correspondientes
+
+[mob_sp_prod_picking.sql](https://github.com/user-attachments/files/23853889/mob_sp_prod_picking.sql)
+
+## ARCHIVO StoreProcedure mob_sp_picking_asignar_contenedor_pedidos
+
+### contiene una modificacion del Sp modificando el orden en el que asignara los slots a los clientes para que correspondan por numero de cliente empezando por el mas chico en el slot 1
+
+[mob_sp_picking_asignar_contenedor_pedidos.sql](https://github.com/user-attachments/files/23854111/mob_sp_picking_asignar_contenedor_pedidos.sql)
+
+
