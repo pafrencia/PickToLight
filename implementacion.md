@@ -89,14 +89,14 @@ La tabla **CarroDisplayQueue** es esencial para coordinar el funcionamiento del 
 
 ## INSERT PARAMETRO Picking_UsaCarroInteligente
 
+[AgregarParametro_Picking_UsaCarroInteligente.sql](https://github.com/user-attachments/files/23859065/AgregarParametro_Picking_UsaCarroInteligente.sql)
+
 ### Este parametro servira de flag para encolar en la tabla los registros solo si el parametro esta en 1
 
 ```sql
 INSERT INTO PARAMETROS (ID_Parametro, Valor, Descripcion)
 VALUES ('Picking_UsaCarroInteligente', '1', 'Habilita o deshabilita el uso del carro PickToLight');
 ```
-ARCHIVO
-[AgregarParametro_Picking_UsaCarroInteligente.sql](https://github.com/user-attachments/files/23859065/AgregarParametro_Picking_UsaCarroInteligente.sql)
 
 ---
 
@@ -158,36 +158,41 @@ GO
 
 ## CREATE StoreProcedure sp_EnqueuePickToLight_Producto_ByScanUM
 
+[sp_EnqueuePickToLight_Producto_ByScanUM_Logs.sql](https://github.com/user-attachments/files/23859398/sp_EnqueuePickToLight_Producto_ByScanUM_Logs.sql)
+
 ### Este sp sirve para agregar a la tabla las filas que correspondan segun las cantidades por producto por slot al escanear el prodcuto
 
-[sp_EnqueuePickToLight_Producto_ByScanUM_Logs.sql](https://github.com/user-attachments/files/23859398/sp_EnqueuePickToLight_Producto_ByScanUM_Logs.sql)
 
 ---
 
 ## CREATE StoreProcedure sp_EnqueuePickToLight_ResetCarro
 
-### Este sp sirve para agregar a la tabla una fila con tipo = RESET lo que al ser leida por el worker mandara a resetear todos los slot del carro de dicha fila
-
 [sp_EnqueuePickToLight_ResetCarro_Logs.sql](https://github.com/user-attachments/files/23859428/sp_EnqueuePickToLight_ResetCarro_Logs.sql)
+
+### Este sp sirve para agregar a la tabla una fila con tipo = RESET lo que al ser leida por el worker mandara a resetear todos los slot del carro de dicha fila
 
 ---
 
-## ARCHIVO StoreProcedure mob_sp_save_picking
-
-### contiene una modificacion del Sp agregandole el uso del SP de reset de carro, para que al pasar al siguiente producto el carro resetee todos los slots
+## StoreProcedure mob_sp_save_picking
 
 [mob_sp_save_picking.sql](https://github.com/user-attachments/files/23853810/mob_sp_save_picking.sql)
 
-## ARCHIVO StoreProcedure mob_sp_prod_picking
+### contiene una modificacion del Sp agregandole el uso del SP de reset de carro, para que al pasar al siguiente producto el carro resetee todos los slots
 
-### contiene una modificacion del Sp agregandole el uso del sp_EnqueuePickToLight_Producto_ByScanUM, para que al pasar al escanear un producto se agreguen a la tabla CarroDisplayQueue las filas correspondientes
+---
+
+## StoreProcedure mob_sp_prod_picking
 
 [mob_sp_prod_picking.sql](https://github.com/user-attachments/files/23853889/mob_sp_prod_picking.sql)
 
-## ARCHIVO StoreProcedure mob_sp_picking_asignar_contenedor_pedidos
+### contiene una modificacion del Sp agregandole el uso del sp_EnqueuePickToLight_Producto_ByScanUM, para que al pasar al escanear un producto se agreguen a la tabla CarroDisplayQueue las filas correspondientes
 
-### contiene una modificacion del Sp modificando el orden en el que asignara los slots a los clientes para que correspondan por numero de cliente empezando por el mas chico en el slot 1
+---
+
+## StoreProcedure mob_sp_picking_asignar_contenedor_pedidos
 
 [mob_sp_picking_asignar_contenedor_pedidos.sql](https://github.com/user-attachments/files/23854111/mob_sp_picking_asignar_contenedor_pedidos.sql)
+
+### contiene una modificacion del Sp modificando el orden en el que asignara los slots a los clientes para que correspondan por numero de cliente empezando por el mas chico en el slot 1
 
 
