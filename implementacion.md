@@ -29,15 +29,18 @@ sp_EnqueuePickToLight_ResetCarro (para resetear todos los slot del carro)
 ## 🧠 Funcionamiento general
 
 1. **La aplicación inserta un registro** en esta tabla cada vez que necesita que un carro muestre algo.
-2. El registro queda con:
+2. IMPORTANTE el registro solo se insertara SI el parametro
+Picking_UsaCarroInteligente es igual a 1
+y el carro es 1, 2 o 3.
+3. El registro queda con:
    - `Procesado = 0`
    - `FechaCreado = GETDATE()`
    - `Tipo = 'DISPLAY'`
-3. Un **servicio de backend (ServicioPickToLightWorker)** monitorea esta tabla y toma las filas no procesadas.
-4. Al enviar la instrucción al carro físico (por Modbus), el servicio:
+4. Un **servicio de backend (ServicioPickToLightWorker)** monitorea esta tabla y toma las filas no procesadas.
+5. Al enviar la instrucción al carro físico (por Modbus), el servicio:
    - Actualiza `Procesado = 1`
    - Completa `FechaProcesado`
-5. La fila queda como histórico, permitiendo auditoría del uso del carro.
+6. La fila queda como histórico, permitiendo auditoría del uso del carro.
 
 ---
 
@@ -83,6 +86,19 @@ La tabla **CarroDisplayQueue** es esencial para coordinar el funcionamiento del 
 - Procesar acciones de forma asincrónica y ordenada.
 - Mantener un historial de lo que sucedió en cada carro.
 
+
+## INSERT PARAMETRO Picking_UsaCarroInteligente
+
+### Este parametro servira de flag para encolar en la tabla los registros solo si el parametro esta en 1
+
+```sql
+INSERT INTO PARAMETROS (ID_Parametro, Valor, Descripcion)
+VALUES ('Picking_UsaCarroInteligente', '1', 'Habilita o deshabilita el uso del carro PickToLight');
+```
+ARCHIVO
+[AgregarParametro_Picking_UsaCarroInteligente.sql](https://github.com/user-attachments/files/23859065/AgregarParametro_Picking_UsaCarroInteligente.sql)
+
+---
 
 
 <img width="695" height="124" alt="image" src="https://github.com/user-attachments/assets/0dc1d4e7-063a-4e2a-a12f-d2610ed27f70" />
