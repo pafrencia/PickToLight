@@ -195,4 +195,25 @@ GO
 
 ### contiene una modificacion del Sp modificando el orden en el que asignara los slots a los clientes para que correspondan por numero de cliente empezando por el mas chico en el slot 1
 
+---
+
+
+## Instalar Servicio como Administrador
+
+<img width="276" height="79" alt="image" src="https://github.com/user-attachments/assets/74b3f426-927e-44cd-8458-495be5aa70c9" />
+
+[Instalador_PTLWorker_1.0.zip](https://github.com/user-attachments/files/23864013/Instalador_PTLWorker_1.0.zip)
+
+---
+
+buscar la carpeta donde se instalo (por defecto C:\Program Files\PickToLight\Worker) y abrir el archivo **appsettings.json**
+
+<img width="199" height="49" alt="image" src="https://github.com/user-attachments/assets/162c39ba-64b1-4295-9e31-cef7d917176f" />
+
+### Configurar base de datos, ip del master (radio que receptara datos del servicio), carpeta de Logs
+
+<img width="1136" height="895" alt="image" src="https://github.com/user-attachments/assets/b53cb237-a5e8-478b-bf2f-65342cd06afb" />
+
+### Reiniciar Servicio y comprobar logs que este funcional
+---
 
