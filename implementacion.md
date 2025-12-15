@@ -158,7 +158,7 @@ GO
 
 ## CREATE StoreProcedure sp_EnqueuePickToLight_Producto_ByScanUM
 
-[sp_EnqueuePickToLight_Producto_ByScanUM_Logs.sql](https://github.com/user-attachments/files/23859398/sp_EnqueuePickToLight_Producto_ByScanUM_Logs.sql)
+[sp_EnqueuePickToLight_Producto_ByScanUM_DIUN_Logs.sql](https://github.com/user-attachments/files/24165658/sp_EnqueuePickToLight_Producto_ByScanUM_DIUN_Logs.sql)
 
 ### Este sp sirve para agregar a la tabla las filas que correspondan segun las cantidades por producto por slot al escanear el prodcuto
 
